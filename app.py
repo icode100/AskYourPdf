@@ -9,7 +9,7 @@ from langchain.chains.question_answering import load_qa_chain
 from langchain.prompts import PromptTemplate
 from dotenv import load_dotenv
 load_dotenv()
-
+os.environ['GOOGLE_API_KEY'] = st.secrets['GOOGLE_API_KEY']
 genai.configure(api_key=os.environ.get('GOOGLE_API_KEY'))
 
 def get_pdf_text(pdf_docs):
